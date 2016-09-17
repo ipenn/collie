@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Auth Provider</title>
+    <script src="/static/jquery.js"></script>
+  </head>
+  <body>
+    {% if g.user %}
+    {{g.user.username}}
+    {% endif %}
+    {% block body %}{% endblock %}
+  </body>
+</html>
