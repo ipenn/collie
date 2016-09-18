@@ -32,9 +32,9 @@ class Post(db.Document):
 
 class Comment(db.Document):
     post = fields.ReferenceField(Post, reverse_delete_rule=mongoengine.CASCADE)
-    name = fields.StringField(80)
-    email = fields.StringField(255)
-    content = fields.StringField(1000)
+    name = fields.StringField(max_length=80)
+    email = fields.StringField(max_length=255)
+    content = fields.StringField(max_length=1000)
     create_at = fields.DateTimeField()
 
     @queryset_manager
